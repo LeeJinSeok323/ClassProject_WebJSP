@@ -1,17 +1,39 @@
 <%@ page contentType="text/html; charset=utf-8"%>
-<%! String greeting = "꾸팡.COM에 오신것을 환영합니다.";
-<jsp:useBean id= "productDAO" class= "dao.ProductRepository" scope="session" />
+<%@ page import="java.util.ArrayList"%>
+<%@ page import="dto.Product"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"    pageEncoding="EUC-KR"%
+<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 
-    
-    String tagline = "하단 페이지 : 확인";%>
+<%! String greeting = "현재 페이지는 오리온 메인홈페이지 입니다.";
+	String tagline = "하단 페이지 : 확인";%>
+
+    <div class="container">
 	<div class="jumbotron">
-		생략…
+		<div class="container">
+			<h3 class="display-4">
+				<%=greeting%>
+            </h3>
+		</div>
+	</div>
+        
+    <div class="container">
+		<div class="row" align="center">
+			<%
+				for (int i = 0; i < listOfProducts.size(); i++) {
+					Product product = listOfProducts.get(i);
+			%>
+			<div class="col-md-4">
+				<h3><%=product.getPname()%></h3>
+				<p><%=product.getDescription()%>
+				<p><%=product.getUnitPrice()%>원
+			</div>
+			<%
+				}
+			%>
+		</div>
+		<hr>
 	</div>
 
- <div class="card bg-dark text-white">
-    <img src="image/top.jpg" class="card-img" alt="...">
-    <div class="card-img-overlay">
-    <h5 class="card-title"> 닭가슴살 홍보페이지 </h5>
-    <p class="card-text">출처 : 홈플러스</p>
-  </div>
-  </div>
+<%
+	ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
+%> 	
