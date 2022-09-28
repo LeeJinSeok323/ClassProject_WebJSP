@@ -6,13 +6,20 @@ public class ProductRepository{
     private ArrayList<Product> listOfProducts = new ArrayList<Product>();
     
     public ProductRepository(){
-        Product phone = new Product("P1234", "iPhone 6s", 800000);
-    	phone.setDescription("4.7-inch, 1334X750 Renina HD display, 8-megapixel iSight Camera");
-    	phone.setCategory("Smart phone");
-        phone.setManufacturer("Apple");
+        Product phone = new Product("P1234", "새우깡", 1500 );
+    	phone.setDescription("새우깡");
+    	phone.setCategory("Snack");
+        phone.setManufacturer("오리온");
         phone.setUnitsInStock(1000);
         phone.setCondition("New");
-    }
+    
+		Product snack = new Product("P1234", "새우깡", 1500 );
+    	phone.setDescription("새우깡");
+    	phone.setCategory("Snack");
+        phone.setManufacturer("오리온");
+        phone.setUnitsInStock(1000);
+        phone.setCondition("New");
+    }    
     
     
     
@@ -20,4 +27,17 @@ public class ProductRepository{
     public ArrayList<Product> getAllProducts(){
         return listOfProducts;
     }
+    
+    	public Product getProductById(String productId) {
+		Product productById = null;
+
+		for (int i = 0; i < listOfProducts.size(); i++) {
+			Product product = listOfProducts.get(i);
+			if (product != null && product.getProductId() != null && product.getProductId().equals(productId)) {
+				productById = product;
+				break;
+			}
+		}
+		return productById;
+	}
 }

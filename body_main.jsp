@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=utf-8"%>
 <%@ page import="java.util.ArrayList"%>
 <%@ page import="dto.Product"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"    pageEncoding="EUC-KR"%
+
 <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
 
 <%! String greeting = "현재 페이지는 오리온 메인홈페이지 입니다.";
@@ -23,9 +23,11 @@
 					Product product = listOfProducts.get(i);
 			%>
 			<div class="col-md-4">
-				<h3><%=product.getPname()%></h3>
-				<p><%=product.getDescription()%>
-				<p><%=product.getUnitPrice()%>원
+				<h3><%=product.getPname()%></h3> <!-- 상품 이름 -->
+				<p><%=product.getDescription()%> <!-- 상품 정보 -->
+				<p><%=product.getUnitPrice()%>원 <!-- 상품 가격 -->
+                <p><a href="product_detail.jsp?id=<%=product.getProductId()%>" class="btn btn-secondary" role="button"> 상품 상세 정보 &raquo;</a>
+
 			</div>
 			<%
 				}

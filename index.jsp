@@ -11,7 +11,7 @@
 
 <title>Welcome</title>
 </head>
-<body>	<%-- JSP 주석 처리 --%>
+<body>
     <%@ include file="top_banner.jsp"%>
     <%@ include file="top_menu.jsp"%>
     <%@ include file="body_main.jsp"%>
