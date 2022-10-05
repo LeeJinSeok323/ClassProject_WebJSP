@@ -8,7 +8,7 @@ public class Product implements Serializable{
     
     private String productId; //상품 아이디
     private String pname;		// 상품이름
-    private Integer uniPrice; //상품가격
+    private Integer unitPrice; //상품가격
     private String description; // 상품설명
     private String manufacturer; //제조사
     private String category; //카테고리
@@ -19,10 +19,10 @@ public class Product implements Serializable{
         super();
     }
 
-    public Product(String productId, String pname, Integer uniPrice){
+    public Product(String productId, String pname, Integer unitPrice){
         this.productId = productId;
         this.pname = pname;
-        this.uniPrice = uniPrice;
+        this.unitPrice = unitPrice;
     }
     
     public String getProductId(){
@@ -40,13 +40,12 @@ public class Product implements Serializable{
     public void setPname(String pname){
         this.pname = pname;
     }
-
     
-    public Integer getUniPrice(){
-        return uniPrice;
+    public Integer getUnitPrice(){
+        return unitPrice;
     }
-    public void setUniPrice(Integer uniPrice){
-        this.uniPrice = uniPrice;
+    public void setUnitPrice(Integer unitPrice){
+        this.unitPrice = unitPrice;
     }
     
     public String getDescription(){
