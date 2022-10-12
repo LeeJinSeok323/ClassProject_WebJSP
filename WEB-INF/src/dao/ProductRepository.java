@@ -17,13 +17,15 @@ public class ProductRepository{
         ggobukchip.setManufacturer("오리온");
         ggobukchip.setUnitsInStock(1000);
         ggobukchip.setCondition("New");
-    
+    	ggobukchip.setFilename("P1234.jpg");
+        
 		Product ohgamja = new Product("P1235", "오감자", 1500 );
     	ohgamja.setDescription("오감자");
     	ohgamja.setCategory("Snack");
         ohgamja.setManufacturer("오리온");
         ohgamja.setUnitsInStock(2000);
         ohgamja.setCondition("New");
+    	ohgamja.setFilename("P1235.jpg");
 
 		Product sunchip = new Product("P1236", "썬칩", 1500 );
     	sunchip.setDescription("썬칩");
@@ -31,7 +33,8 @@ public class ProductRepository{
         sunchip.setManufacturer("오리온");
         sunchip.setUnitsInStock(3000);
         sunchip.setCondition("New");
-        
+    	sunchip.setFilename("P1236.jpg");
+
         
 		listOfProducts.add(ggobukchip);
 		listOfProducts.add(ohgamja);

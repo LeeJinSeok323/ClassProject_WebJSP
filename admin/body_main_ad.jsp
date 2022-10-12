@@ -3,10 +3,6 @@
 <%@ page import="dto.Product"%>
 <%@ page import="dao.ProductRepository"%>
 
-
-
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" />
-
 <%! String greeting = "현재 페이지는 오리온 메인홈페이지 입니다.";
 	String tagline = "하단 페이지 : 확인";%>
 
@@ -20,7 +16,7 @@
 	</div>
     <%
 		ProductRepository dao = ProductRepository.getInstance();
-        ArrayList<Product> listOfProducts = productDAO.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
+        ArrayList<Product> listOfProducts = dao.getAllProducts(); // 리스트에 상품 전체 정보를 얻어온다.
     %> 
     <div class="container">
 		<div class="row" align="center">
@@ -30,11 +26,10 @@
 			%>
 			<div class="col-md-4">
 				<div class="card bg-dark text-white">
-					<img src="image/product/<%=product.getProductId()%>.jpg" class="card-img" alt="...">
+					<img src="../image/product/<%=product.getFilename()%>" class="card-img" alt="...">
 					<div class="card-img-overlay">
                     </div>
                 </div>
-                
                 
 				<h3><%=product.getPname()%></h3> <!-- 상품 이름 -->
                 <p><%=product.getDescription()%></p> <!-- 상품 정보 -->
